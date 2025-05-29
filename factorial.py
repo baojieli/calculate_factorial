@@ -6,11 +6,15 @@ def factorial_iterative(n):
         result *= i
     return result
 
-# Example usage
-num = int(input("Enter a number: "))
-if num < 0:
-    print("Factorial is not defined for negative numbers.")
-else:
-    print(f"Factorial of {num} is {factorial_iterative(num)}")
+def factorial(n):
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
+    return factorial_iterative(n)
 
-#
+# Example usage
+if __name__ == "__main__":
+    num = int(input("Enter a number: "))
+    if num < 0:
+        print("Factorial is not defined for negative numbers.")
+    else:
+        print(f"Factorial of {num} is {factorial_iterative(num)}")
